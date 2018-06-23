@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: CSD Functions - SearchWP
-Version: 1.0
+Version: 1.2
 Description: SearchWP Plugin Customizations for CSD Schools Theme
 Author: Josh Armentano
 Author URI: http://abidewebdesign.com
@@ -11,6 +11,15 @@ Plugin URI: http://abidewebdesign.com
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+
+require WP_CONTENT_DIR . '/plugins/plugin-update-checker-master/plugin-update-checker.php';
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+	'https://github.com/csd509j/CSD-functions-searchwp',
+	__FILE__,
+	'CSD-functions-searchwp'
+);
+
+$myUpdateChecker->setBranch('master'); 
 
 /*
  * Fix bug with SearchWP not sorting results correctly
