@@ -24,7 +24,6 @@ $myUpdateChecker->setBranch('master');
 /*
  * Fix bug with SearchWP not sorting results correctly
  *
- * @since CSD Schools 1.0
  */
  
 function csd_searchwp_query_orderby( $sql ) {
@@ -37,7 +36,6 @@ add_filter( 'searchwp_query_orderby', 'csd_searchwp_query_orderby' );
 /*
  * Automatically convert permalinks to PDFs in search results to the PDF itself, not the Attachment page
  *
- * @since CSD Schools 1.0
  */
 
 function csd_force_direct_pdf_links( $permalink ){
@@ -59,7 +57,6 @@ add_filter( 'attachment_link', 'csd_force_direct_pdf_links' );
 /*
  * Link directly to Media files instead of Attachment pages in search results
  *
- * @since CSD Schools 1.0
  */
  
 function my_search_media_direct_link( $permalink, $post ) {
@@ -77,7 +74,6 @@ add_filter( 'the_permalink', 'my_search_media_direct_link', 10, 2 );
 /*
  * Adjust mysql select statement limits
  *
- * @since CSD Schools 1.0
  */
  
 add_filter( 'searchwp_big_selects', '__return_true' );
@@ -85,7 +81,6 @@ add_filter( 'searchwp_big_selects', '__return_true' );
 /*
  * Add custom fields to search
  *
- * @since CSD Schools 1.2.4
  */
 function csd_searchwp_acf_repeater_keys( $keys ) {
 	$keys[] = 'page_content_blocks_%';
@@ -98,7 +93,6 @@ add_filter( 'searchwp_custom_field_keys', 'csd_searchwp_acf_repeater_keys' );
 /*
  * Add search highlight
  *
- * @since CSD Schools 1.2.4
  */
 function searchwp_term_highlight_auto_excerpt( $excerpt ) {
 	global $post;
