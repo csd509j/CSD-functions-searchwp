@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: CSD Functions - SearchWP
-Version: 1.2
+Version: 1.3
 Description: SearchWP Plugin Customizations for CSD Schools Theme
 Author: Josh Armentano
 Author URI: http://abidewebdesign.com
