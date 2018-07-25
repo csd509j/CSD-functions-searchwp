@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: CSD Functions - SearchWP
-Version: 1.3
+Version: 1.4
 Description: SearchWP Plugin Customizations for CSD Schools Theme
 Author: Josh Armentano
 Author URI: http://abidewebdesign.com
@@ -112,3 +112,9 @@ function searchwp_term_highlight_auto_excerpt( $excerpt ) {
 }
 
 add_filter( 'get_the_excerpt', 'searchwp_term_highlight_auto_excerpt' );
+
+/*
+ * Big select fix
+ *
+ */
+add_filter( 'searchwp_big_selects', '__return_true' );
