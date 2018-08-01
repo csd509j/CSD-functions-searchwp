@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: CSD Functions - SearchWP
-Version: 1.4
+Version: 1.5
 Description: SearchWP Plugin Customizations for CSD Schools Theme
 Author: Josh Armentano
 Author URI: http://abidewebdesign.com
@@ -53,30 +53,6 @@ function csd_force_direct_pdf_links( $permalink ){
 }
 add_filter( 'the_permalink', 'csd_force_direct_pdf_links' );
 add_filter( 'attachment_link', 'csd_force_direct_pdf_links' );
-
-/*
- * Link directly to Media files instead of Attachment pages in search results
- *
- */
- 
-function my_search_media_direct_link( $permalink, $post ) {
-	
-	if ( is_search() && 'attachment' === get_post_type( $post ) ) {
-		
-		$permalink = wp_get_attachment_url( $post->ID );
-		
-	}
-
-	return esc_url( $permalink );
-}
-add_filter( 'the_permalink', 'my_search_media_direct_link', 10, 2 );
-
-/*
- * Adjust mysql select statement limits
- *
- */
- 
-add_filter( 'searchwp_big_selects', '__return_true' );
 
 /*
  * Add custom fields to search
